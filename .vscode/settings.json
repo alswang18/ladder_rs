@@ -1,0 +1,9 @@
+{
+    // Global setting to enable format on save
+    "editor.formatOnSave": true,
+    // Optional: Specify default formatter for Rust files
+    "[rust]": {
+        "editor.formatOnSave": true // Ensure it's enabled for Rust files
+    },
+    "rust-analyzer.rustfmt.extraArgs": [] // Any extra rustfmt args, usually not needed for basic setup
+}

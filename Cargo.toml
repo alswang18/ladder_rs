@@ -4,3 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+anyhow = "1.0.98"
+raw-window-handle = "0.6.2"
+softbuffer = "0.4.6"
+winit = "0.30.11"

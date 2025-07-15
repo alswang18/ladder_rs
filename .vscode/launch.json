@@ -1,0 +1,62 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug ladder_rs (Windows)",
+            "type": "cppvsdbg", // Use cppvsdbg for MSVC toolchain on Windows
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/ladder_rs.exe", // .exe for Windows
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true, // Often useful for console applications on Windows
+        },
+        {
+            "name": "Debug unit tests in ladder_rs (Windows)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/ladder_rs.exe", // The test executable is often the main binary
+            "args": ["--test"], // Argument to run tests
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug ladder_rs (Linux/Mac)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=ladder_rs",
+                    "--package=ladder_rs"
+                ],
+                "filter": {
+                    "name": "ladder_rs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in ladder_rs (Linux/Mac)",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=ladder_rs",
+                    "--package=ladder_rs"
+                ],
+                "filter": {
+                    "name": "ladder_rs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
