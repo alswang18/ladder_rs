@@ -1,0 +1,9 @@
+[package]
+name = "ladder_rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.98"
+pixels = "0.15.0"
+winit = "0.30.12"
